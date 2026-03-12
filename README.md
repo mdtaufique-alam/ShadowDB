@@ -1,4 +1,4 @@
-# ShadowDB 🚀
+# ShadowDB – Local AI Semantic Search Engine🚀
 
 **ShadowDB** is a high-performance, privacy-first semantic file search engine. It monitors your local filesystem in real-time and provides a web-based dashboard for semantic search and AI-driven query reasoning.
 <img width="1470" height="854" alt="image" src="https://github.com/user-attachments/assets/85d98d50-c526-414a-9cfb-2ab51353bd7c" />
