@@ -1,0 +1,2 @@
+This is a live test for ShadowDB's SSE pipeline.
+If the dashboard updates instantly, the "Heavy" sync is a success!

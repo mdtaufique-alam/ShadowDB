@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+target/
+venv/
+.venv/
+
+# Next.js
+.next/
+out/
+
+# Vector DB
+.lancedb/
+
+# Environment
+.env*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

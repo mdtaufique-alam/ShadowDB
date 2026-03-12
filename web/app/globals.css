@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'GT America';
+  src: local('Inter'), local('system-ui'); /* Fallback for GT America */
+  font-weight: 500;
+}
+
+:root {
+  /* Pieces.app Palette */
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #bec4cc;
+  --accent: #0000ee;
+  --border: #292a2b;
+  --surface-low: #1c1d1e;
+  --surface-mid: #222426;
+  --surface-high: #292a2b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-surface-low: var(--surface-low);
+  --color-surface-mid: var(--surface-mid);
+  --color-surface-high: var(--surface-high);
+  --font-sans: 'Inter', 'GT America', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+}
+
+/* Pieces-style Top-Lit Glow */
+.top-lit {
+  position: relative;
+  overflow: hidden;
+}
+
+.top-lit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  z-index: 10;
+}
+
+/* Custom Scrollbar (Pieces Minimalist) */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--surface-high); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* Animated Noise Background (Subtle) */
+.noise-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes blink { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }
+.cursor { animation: blink 1s step-end infinite; }
